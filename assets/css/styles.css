@@ -78,6 +78,7 @@ main {
 .section-block {
     padding: 4rem 5%;
     position: relative;
+    scroll-margin-top: 60px;
 }
 
 .section-content {
@@ -167,8 +168,89 @@ footer {
     color: #fff;
 }
 
+/* Project Styles */
+.project-item {
+    margin-bottom: 2.5rem;
+}
+
+.project-item h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-item ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.project-item ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.project-item ul li::before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+/* Skills & Education Styles */
+.education-section, .skills-section, .competitive-section {
+    margin-bottom: 2.5rem;
+}
+
+.education-section h3, .skills-section h3, .competitive-section h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.education-item h4, .skill-category h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.platform-stats {
+    margin-top: 1rem;
+}
+
+.platform-stats p {
+    margin-bottom: 0.8rem;
+}
+
+.platform-stats strong {
+    color: #007bff;
+}
+
+/* Contact Styles */
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+}
+
+.contact-info strong {
+    color: #007bff;
+}
+
+/* Remove unused styles */
+.platform, .contact-item {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .section-block {
+        scroll-margin-top: 150px;
+    }
+    
     .about-container {
         flex-direction: column;
         gap: 2rem;
@@ -193,5 +275,13 @@ footer {
     
     main {
         margin-top: 150px;
+    }
+    
+    .platform-stats p, .contact-info p {
+        margin-bottom: 0.6rem;
+    }
+    
+    .project-item ul li {
+        padding-left: 1.2rem;
     }
 }
