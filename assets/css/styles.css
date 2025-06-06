@@ -12,6 +12,7 @@ html {
 }
 
 :root {
+    /* Dark theme colors (default) */
     --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
     --accent-primary: #ff6b00;
@@ -21,15 +22,102 @@ html {
     --text-tertiary: #808080;
 }
 
+/* Light theme colors */
+:root[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --accent-primary: #ff6b00;
+    --accent-secondary: #ff8534;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6a6a6a;
+}
+
+/* Theme toggle button styles */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--accent-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: rotate(15deg);
+    color: var(--accent-secondary);
+}
+
+#theme-toggle .sun-icon,
+#theme-toggle .moon-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Show/hide icons based on theme */
+:root[data-theme="light"] .moon-icon,
+:root:not([data-theme="light"]) .sun-icon {
+    display: none;
+}
+
 body {
     font-family: 'Rajdhani', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
-    background-image: 
-        radial-gradient(circle at 100% 0%, rgba(255, 107, 0, 0.1) 0%, transparent 25%),
-        radial-gradient(circle at 0% 100%, rgba(255, 107, 0, 0.1) 0%, transparent 25%);
-    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background circles for dark theme */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(800px circle at 5% 20%, rgba(0, 183, 255, 0.22), transparent 70%),
+        radial-gradient(1000px circle at 90% 20%, rgba(255, 107, 0, 0.22), transparent 70%),
+        radial-gradient(900px circle at 50% 80%, rgba(46, 255, 122, 0.22), transparent 70%);
+    filter: blur(150px);
+    z-index: -1;
+    mix-blend-mode: lighten;
+}
+
+/* Background circles for light theme */
+:root[data-theme="light"] body::before {
+    background: 
+        radial-gradient(800px circle at 5% 20%, rgba(0, 183, 255, 0.25), transparent 70%),
+        radial-gradient(1000px circle at 90% 20%, rgba(255, 107, 0, 0.25), transparent 70%),
+        radial-gradient(900px circle at 50% 80%, rgba(46, 255, 122, 0.25), transparent 70%);
+    filter: blur(80px);
+    mix-blend-mode: multiply;
+}
+
+/* Additional glow effect for sections */
+section {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.01)
+    );
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="light"] section {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(10px);
 }
 
 /* Typography */
@@ -69,19 +157,22 @@ strong {
    Navigation
    =================== */
 header {
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(3px);
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(8px) saturate(120%);
     border-bottom: 1px solid rgba(255, 107, 0, 0.1);
     position: sticky;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(255, 107, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-header.nav-hidden {
-    transform: translateY(-100%);
+/* Light theme header styles */
+:root[data-theme="light"] header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px) saturate(120%);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -108,6 +199,14 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Group navigation items and theme toggle */
+nav .nav-group {
+    display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -161,6 +260,13 @@ nav a:hover, nav a.active-nav {
     z-index: 999;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+/* Light theme clock styles */
+:root[data-theme="light"] #clock {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 107, 0, 0.2);
 }
 
 /* ==========================================================================
@@ -292,31 +398,25 @@ section:not(:last-child)::after {
 }
 
 .professional-titles {
-    margin: 1rem 0 2rem 0;
+    margin: 0.5rem 0 2rem 0;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    min-height: 1.8em;
 }
 
-.professional-titles span {
+.typing {
     color: var(--accent-secondary);
     font-weight: 600;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    border-right: 3px solid var(--accent-primary);
+    padding-right: 5px;
+    animation: blink 0.75s step-end infinite;
 }
 
-.professional-titles .separator {
-    color: var(--text-tertiary);
-    font-size: 0.8rem;
-}
-
-.professional-titles span:not(.separator):hover {
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
-    transform: translateY(-2px);
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-primary) }
 }
 
 /* =========================
@@ -539,9 +639,31 @@ section:not(:last-child)::after {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     position: relative;
-    z-index: 1;
+}
+
+.form-group .error {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-group .error.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Error state for inputs */
+.form-group input.error-field,
+.form-group textarea.error-field {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.2);
 }
 
 .form-group label {
@@ -566,17 +688,64 @@ section:not(:last-child)::after {
     transition: all 0.3s ease;
 }
 
+/* Light theme form styles */
+:root[data-theme="light"] .form-group input,
+:root[data-theme="light"] .form-group textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: var(--text-primary);
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
     box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+/* Dark theme focus styles */
+:root:not([data-theme="light"]) .form-group input:focus,
+:root:not([data-theme="light"]) .form-group textarea:focus {
     background: rgba(15, 15, 15, 0.8);
+}
+
+/* Light theme focus styles */
+:root[data-theme="light"] .form-group input:focus,
+:root[data-theme="light"] .form-group textarea:focus {
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
 }
 
 .form-group textarea {
     resize: vertical;
     min-height: 150px;
+}
+
+/* Error state styles */
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.2);
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form group spacing for error messages */
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
 }
 
 #contact-form button {
@@ -675,11 +844,18 @@ footer {
         padding: 0.5rem 5%;
     }
     
+    nav .nav-group {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
     nav ul {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
         padding-bottom: 0.5rem;
+        width: 100%;
     }
 
     nav a {
@@ -687,10 +863,16 @@ footer {
         padding: 0.3rem 0;
     }
 
+    #theme-toggle {
+        margin-top: 0.5rem;
+    }
+
     #clock {
-        top: 250px; /* Adjust for taller mobile navbar */
-        right: 0.5rem;
-        font-size: 1rem;
+        top: auto; /* Reset the top position */
+        bottom: 0px; /* Position from bottom instead */
+        right: 1rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
     
     main {
@@ -699,7 +881,7 @@ footer {
     
     section {
         padding: 3rem 5%;
-        scroll-margin-top: 210px;
+        scroll-margin-top: 280px;
     }
     
     .logo {
