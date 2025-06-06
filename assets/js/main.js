@@ -1,23 +1,15 @@
-// JavaScript functionality will be added here 
-console.log("Hello from JavaScript"); 
+// Auto-hide navbar functionality
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
 
-// Select the name heading and change its color
-const nameHeading = document.querySelector('.about-text h2');
-nameHeading.style.color = "blue"; 
-
-// Add click event listener to the test button
-const toggleButton = document.querySelector('#Name');
-const toggleHeading = document.querySelector('#toggleHeading');
-let isOriginalText = true;
-
-toggleButton.addEventListener("click", function() {
-    if (isOriginalText) {
-        toggleHeading.innerText = "FRONTEND DEVELOPER";
-    } else {
-        toggleHeading.innerText = "MITHUN DUTTA";
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) { // Scrolling down
+        header.classList.add('nav-hidden');
+    } else { // Scrolling up
+        header.classList.remove('nav-hidden');
     }
-    isOriginalText = !isOriginalText;
-}); 
+    lastScrollY = window.scrollY;
+});
 
 // Live Clock functionality
 function updateClock() {
@@ -32,4 +24,53 @@ function updateClock() {
 
 // Update clock immediately and then every second
 updateClock();
-setInterval(updateClock, 1000); 
+setInterval(updateClock, 1000);
+
+// Highlight active navigation section on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+function updateActiveNavLink() {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - sectionHeight/3)) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active-nav');
+        if (link.getAttribute('href').slice(1) === currentSection) {
+            link.classList.add('active-nav');
+        }
+    });
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updateActiveNavLink);
+
+// Call once on page load to set initial active state
+updateActiveNavLink();
+
+// Scroll to top functionality
+const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+// Show/hide button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 800) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
+
+// Scroll to top when button is clicked
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}); 
