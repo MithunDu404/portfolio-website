@@ -1,3 +1,18 @@
+// Loading Screen functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Hide loading screen when page is fully loaded
+    window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            // Remove from DOM after animation completes
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000); // Show loading screen for at least 1 second
+    });
+});
+
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
