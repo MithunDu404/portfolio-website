@@ -30,7 +30,7 @@ themeToggle.addEventListener('click', () => {
     const newTheme = root.dataset.theme === 'light' ? '' : 'light';
     root.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
-});
+}); 
 
 // Live Clock functionality
 function updateClock() {
@@ -45,7 +45,7 @@ function updateClock() {
 
 // Update clock immediately and then every second
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock, 1000); 
 
 // Highlight active navigation section on scroll
 const sections = document.querySelectorAll('section');
