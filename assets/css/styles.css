@@ -781,7 +781,7 @@ section:not(:last-child)::after {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    background: rgba(15, 15, 15, 0.6);
+    background: rgba(38, 66, 65, 0.6);
     border: 1px solid rgba(255, 107, 0, 0.2);
     border-radius: 8px;
     color: var(--text-primary);
