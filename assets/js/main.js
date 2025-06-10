@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }, 1000); // Show loading screen for at least 1 second
     });
-});
+}); 
 
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');

@@ -22,7 +22,7 @@
     opacity: 0;
     visibility: hidden;
 }
-
+ 
 .loader {
     display: flex;
     flex-direction: column;
@@ -525,7 +525,7 @@ section:not(:last-child)::after {
    Projects Section
    ========================= */
 .project {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 2.5rem;
@@ -661,7 +661,7 @@ section:not(:last-child)::after {
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     border-radius: 10px;
     border: 1px solid rgba(255, 107, 0, 0.1);
     transition: all 0.3s ease;
@@ -721,7 +721,7 @@ section:not(:last-child)::after {
 
 /* Contact Form */
 .contact-form {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 107, 0, 0.1);
@@ -1100,7 +1100,7 @@ footer {
 
 /* Education Items */
 .education-item {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 2rem;
@@ -1184,7 +1184,7 @@ footer {
 }
 
 .skill-category {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 1.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 107, 0, 0.1);
@@ -1242,7 +1242,7 @@ footer {
 }
 
 .cp-platform {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 1.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 107, 0, 0.1);
@@ -1300,7 +1300,7 @@ footer {
 }
 
 .exam-item {
-    background: var(--bg-secondary);
+    /* background: var(--bg-secondary); */
     padding: 1.5rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 107, 0, 0.1);
