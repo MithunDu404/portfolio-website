@@ -165,7 +165,7 @@ function isValidEmail(email) {
 
 // Typewriter effect
 const titles = [
-    "Frontend Developer",
+    "Full Stack Developer",
     "DSA Enthusiast",
     "Competitive Programmer"
 ];
