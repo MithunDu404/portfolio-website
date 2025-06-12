@@ -1,4 +1,4 @@
-// Loading Screen functionality
+// Loading Screen functionality 
 document.addEventListener('DOMContentLoaded', () => {
     // Hide loading screen when page is fully loaded
     window.addEventListener('load', () => {
@@ -97,73 +97,6 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Contact Form Validation
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
-
-    // Get form fields
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    
-    // Reset any existing error styles
-    [name, email, message].forEach(field => {
-        field.classList.remove('error-field');
-        const errorSpan = document.getElementById(`${field.id}-error`);
-        errorSpan.textContent = '';
-        errorSpan.classList.remove('visible');
-    });
-
-    // Validate fields
-    let isValid = true;
-    
-    if (!name.value.trim()) {
-        showError(name, 'Name is required');
-        isValid = false;
-    }
-    
-    if (!email.value.trim()) {
-        showError(email, 'Email is required');
-        isValid = false;
-    } else if (!isValidEmail(email.value)) {
-        showError(email, 'Please enter a valid email address');
-        isValid = false;
-    }
-    
-    if (!message.value.trim()) {
-        showError(message, 'Message is required');
-        isValid = false;
-    }
-
-    if (isValid) {
-        // If form is valid, you can submit it here
-        alert('Form submitted successfully!');
-        contactForm.reset();
-        
-        // Clear any remaining error states
-        [name, email, message].forEach(field => {
-            field.classList.remove('error-field');
-            const errorSpan = document.getElementById(`${field.id}-error`);
-            errorSpan.textContent = '';
-            errorSpan.classList.remove('visible');
-        });
-    }
-});
-
-function showError(field, message) {
-    field.classList.add('error-field');
-    const errorSpan = document.getElementById(`${field.id}-error`);
-    errorSpan.textContent = message;
-    errorSpan.classList.add('visible');
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
 // Typewriter effect
 const titles = [
     "Full Stack Developer",
@@ -211,3 +144,84 @@ function typeWriter() {
 
 // Start the typewriter effect
 typeWriter(); 
+
+
+
+
+// Contact Form Validation
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit')
+const successMessage = document.getElementById('successMessage');
+
+
+contactForm.addEventListener('submit', async (e) => { 
+    e.preventDefault(); 
+
+    if (!validateForm()) return; 
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+     
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+ 
+    try {  
+        // Send request to backend 
+        const response = await fetch('http://localhost:5001/api/comment', { 
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/json' 
+            }, 
+            body: JSON.stringify(data) 
+        }); 
+
+        if (!response.ok) throw new Error('Submission failed');    
+        
+        showSuccess();
+    } catch (error) { 
+        console.error('Error:', error); 
+        alert('Failed to send message. Please try again.'); 
+    } finally { 
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false; 
+    } 
+});
+
+    function validateForm() {
+        let valid = true;
+
+        // Required field IDs
+        const fields = ['name', 'email', 'message'];
+
+        fields.forEach(id => {
+            const input = document.getElementById(id);
+            const error = document.getElementById(id + '-error');
+            const value = input.value.trim();
+
+            input.classList.remove('input-error');
+            error.style.display = 'none';
+
+            if (!value || (id === 'message' && value.length < 10)) {
+                input.classList.add('input-error');
+                error.style.display = 'block';
+                valid = false;
+            }
+
+            if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                input.classList.add('input-error');
+                error.textContent = 'Please enter a valid email address';
+                error.style.display = 'block';
+                valid = false;
+            }
+        });
+        return valid;
+    }
+
+    function showSuccess() {
+        successMessage.style.display = 'block';
+        contactForm.reset();
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+    }

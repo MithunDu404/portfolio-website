@@ -18,7 +18,7 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <div class="loader">
+        <div class="loader"> 
             <svg class="loader-icon" viewBox="0 0 24 24">
                 <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
                 <path d="M2 17L12 22L22 17"></path>
@@ -359,7 +359,8 @@
                             <textarea id="message" name="message" rows="4" required></textarea>
                             <span class="error" id="message-error"></span>
                         </div>
-                        <button type="submit">Send Message</button>
+                        <button id = "submit" type="submit">Send Message</button>
+                        <div id="successMessage" class="success-message" style="display:none; color: green; margin-top: 10px;">Message sent successfully!</div>
                     </form>
                 </div>
             </div>
