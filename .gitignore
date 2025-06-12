@@ -1,5 +1,8 @@
-backend\.env
-backend\venv
+# Environment variables
+backend/.env
+
+# Virtual environment
+backend/venv/
 
 contact_form_backend.md
 contact_form_backend.pdf
