@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 }); 
 
+
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
