@@ -787,6 +787,11 @@ section:not(:last-child)::after {
     border: 1px solid rgba(255, 107, 0, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
 }
 
 .contact-form::before {
@@ -1167,6 +1172,11 @@ footer {
     border: 1px solid rgba(255, 107, 0, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
 }
 
 .education-item::before {
@@ -1250,6 +1260,12 @@ footer {
     border: 1px solid rgba(255, 107, 0, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
 }
 
 .skill-category::before {
@@ -1308,6 +1324,12 @@ footer {
     border: 1px solid rgba(255, 107, 0, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cp-platform:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
 }
 
 .cp-platform::before {
@@ -1366,6 +1388,12 @@ footer {
     border: 1px solid rgba(255, 107, 0, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.exam-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
 }
 
 .exam-item::before {
