@@ -1,5 +1,5 @@
 // Loading Screen functionality 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {    
     // Hide loading screen when page is fully loaded
     window.addEventListener('load', () => {
         const loadingScreen = document.getElementById('loading-screen');
