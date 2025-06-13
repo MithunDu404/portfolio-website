@@ -2,8 +2,8 @@
 backend/venv/
 backend/.env
 
-contact_form_backend.md
-contact_form_backend.pdf
-backend_guide.md
-backend_guide.pdf
-backend_guide.html
+
+# Documentation
+*.md
+*.pdf
+!README.md
