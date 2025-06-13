@@ -187,35 +187,36 @@ contactForm.addEventListener('submit', async (e) => {
     } 
 });
 
-    function validateForm() {
-        let valid = true;
+function validateForm() {
+    let valid = true;
+    const fields = ['name', 'email', 'message'];
 
-        // Required field IDs
-        const fields = ['name', 'email', 'message'];
+    fields.forEach(id => {
+        const input = document.getElementById(id);
+        const error = document.getElementById(id + '-error');
+        const value = input.value.trim();
 
-        fields.forEach(id => {
-            const input = document.getElementById(id);
-            const error = document.getElementById(id + '-error');
-            const value = input.value.trim();
+        input.classList.remove('input-error');
+        error.classList.remove('visible');
 
-            input.classList.remove('input-error');
-            error.style.display = 'none';
+        if (!value || (id === 'message' && value.length < 10)) {
+            input.classList.add('input-error');
+            error.classList.add('visible');
+            error.textContent = id === 'message' ? 'Message must be at least 10 characters' : 'This field is required';
+            valid = false;
+        }
 
-            if (!value || (id === 'message' && value.length < 10)) {
-                input.classList.add('input-error');
-                error.style.display = 'block';
-                valid = false;
-            }
+        if (id === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            input.classList.add('input-error');
+            error.textContent = 'Please enter a valid email address';
+            error.classList.add('visible');
+            valid = false;
+        }
+    });
 
-            if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-                input.classList.add('input-error');
-                error.textContent = 'Please enter a valid email address';
-                error.style.display = 'block';
-                valid = false;
-            }
-        });
-        return valid;
-    }
+    return valid;
+}
+
 
     function showSuccess() {
         successMessage.style.display = 'block';
