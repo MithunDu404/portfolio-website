@@ -1,5 +1,6 @@
 // Loading Screen functionality 
-document.addEventListener('DOMContentLoaded', () => {    
+document.addEventListener('DOMContentLoaded', () => {   
+    updateCommentCount(); 
     // Hide loading screen when page is fully loaded
     window.addEventListener('load', () => {
         const loadingScreen = document.getElementById('loading-screen');
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
             }, 500);
-        }, 1000); // Show loading screen for at least 1 second
+        }, 1000); // Show loading screen for at least 1 second 
     });
 }); 
 
@@ -220,9 +221,25 @@ function validateForm() {
 
     function showSuccess() {
         successMessage.style.display = 'block';
+        updateCommentCount();
         contactForm.reset();
         setTimeout(() => {
             successMessage.style.display = 'none';
         }, 5000);
         successMessage.scrollIntoView({ behavior: 'smooth' });
     }
+
+async function updateCommentCount() {
+    try {
+        const response = await fetch('https://portfolio-website-fvdf.onrender.com/api/comment-count');
+        const data = await response.json();
+        if (response.ok) {
+            const countSpan = document.getElementById('comment-count');
+            countSpan.textContent = `(${data.count})`;
+        } else {
+            console.error('Failed to load comment count:', data.error);
+        }
+    } catch (err) {
+        console.error('Error fetching comment count:', err);
+    }
+}
