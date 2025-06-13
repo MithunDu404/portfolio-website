@@ -167,7 +167,7 @@ contactForm.addEventListener('submit', async (e) => {
  
     try {  
         // Send request to backend 
-        const response = await fetch('http://localhost:5001/api/comment', { 
+        const response = await fetch('https://portfolio-website-fvdf.onrender.com/api/comment', { 
             method: 'POST', 
             headers: { 
                 'Content-Type': 'application/json' 
