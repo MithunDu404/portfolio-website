@@ -2,6 +2,11 @@
 backend/venv/
 backend/.env
 
+Chatbot/venv/
+Chatbot/.env
+Chatbot/intents.json
+Chatbot/__pycache__
+Chatbot/data.pth
 
 admin
 
