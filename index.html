@@ -1,383 +1,666 @@
 <!DOCTYPE html>
 <!-- This is the main HTML5 doctype declaration -->
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MithunD.</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Link to the external CSS file for styling -->
-    <link rel="stylesheet" href="assets/css/styles.css"> 
-</head> 
-<body>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <div class="loader"> 
-            <svg class="loader-icon" viewBox="0 0 24 24">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
-                <path d="M2 17L12 22L22 17"></path>
-                <path d="M2 12L12 17L22 12"></path>
-            </svg>
-            <div class="loading-text">Loading<span class="dots">...</span></div>
-        </div>
+      <div class="loader">
+        <svg class="loader-icon" viewBox="0 0 24 24">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
+          <path d="M2 17L12 22L22 17"></path>
+          <path d="M2 12L12 17L22 12"></path>
+        </svg>
+        <div class="loading-text">Loading<span class="dots">...</span></div>
+      </div>
     </div>
 
     <!-- Header section with site title and navigation menu -->
     <header>
-        <nav>
-            <div class="logo">Mithun D<span>.</span></div>
-            <div class="nav-group"> 
-            <ul>
-                <li><a href="#about" class="active-nav">ABOUT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-                <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
+      <nav>
+        <div class="logo">Mithun D<span>.</span></div>
+        <div class="nav-group">
+          <ul>
+            <li><a href="#about" class="active-nav">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+          <button id="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
-        </nav>
+      </nav>
     </header>
     <div id="clock"></div>
     <!-- Main content area -->
     <main>
-        <section id="about">
-            <div class="about-container">
-                <a href="assets/js/Resume_Basic2.pdf" download class="resume-button">
-                    Resume
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                </a>
-                <div class="about-text">
-                    <h3>I AM</h3>
-                    <h2 id="Name">MITHUN DUTTA</h2>
-                    <div class="professional-titles">
-                        <span id="typewriter" class="typing"></span>
-                    </div>
-                    <p>A Computer Science undergraduate at IIEST Shibpur, passionate about solving complex algorithmic challenges and building efficient solutions. I thrive on DSA, competitive programming and enjoy transforming theoretical concepts into practical applications.</p>
-                    <p>Through my journey in competitive programming and project development, I've cultivated strong problem-solving abilities and a deep understanding of data structures and algorithms.</p>
-                </div>
-                <div class="profile-image">
-                    <img src="assets\img\face.jpg" alt="Profile Image">
-                </div>
+      <section id="about">
+        <div class="about-container">
+          <a href="assets/js/Resume_Basic2.pdf" download class="resume-button">
+            Resume
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
+          <div class="about-text">
+            <h3>I AM</h3>
+            <h2 id="Name">MITHUN DUTTA</h2>
+            <div class="professional-titles">
+              <span id="typewriter" class="typing"></span>
+            </div>
+            <p>
+              A Computer Science undergraduate at IIEST Shibpur, passionate
+              about solving complex algorithmic challenges and building
+              efficient solutions. I thrive on DSA, competitive programming and
+              enjoy transforming theoretical concepts into practical
+              applications.
+            </p>
+            <p>
+              Through my journey in competitive programming and project
+              development, I've cultivated strong problem-solving abilities and
+              a deep understanding of data structures and algorithms.
+            </p>
+          </div>
+          <div class="profile-image">
+            <img src="assets\img\face.jpg" alt="Profile Image" />
+          </div>
         </div>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <a href="projects.html" class="section-nav-button">
-                More Details
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <a href="projects.html" class="section-nav-button">
+          More Details
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <div class="project">
+          <div class="project-content">
+            <h3>Path Visualizer Program</h3>
+            <p>
+              An interactive pathfinding visualization system built with Pygame.
+              Key features:
+            </p>
+            <ul>
+              <li>
+                Integration of multiple pathfinding algorithms including
+                Dijkstra's and A* with real-time performance analysis
+              </li>
+              <li>
+                Interactive interface for custom obstacle placement and path
+                visualization
+              </li>
+              <li>
+                Comprehensive performance metrics and algorithm comparison tools
+              </li>
+            </ul>
+            <a
+              href="https://github.com/MithunDu404/Projects-pygame/tree/main/Path_Visualizer_Program"
+              class="project-link"
+            >
+              <span>View on GitHub</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
             </a>
-
-            <div class="project">
-                <div class="project-content">
-                    <h3>Path Visualizer Program</h3>
-                    <p>An interactive pathfinding visualization system built with Pygame. Key features:</p>
-                    <ul>
-                        <li>Integration of multiple pathfinding algorithms including Dijkstra's and A* with real-time performance analysis</li>
-                        <li>Interactive interface for custom obstacle placement and path visualization</li>
-                        <li>Comprehensive performance metrics and algorithm comparison tools</li>
-                    </ul>
-                    <a href="https://github.com/MithunDu404/Projects-pygame/tree/main/Path_Visualizer_Program" class="project-link">
-                        <span>View on GitHub</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-item">
-                        <img src="assets/img/python.png" alt="Python">
-                    </div>
-                    <div class="tech-item">
-                        <img src="assets/img/pygame.png" alt="Pygame">
-                    </div>
-                </div>
+          </div>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <img src="assets/img/python.png" alt="Python" />
             </div>
-
-            <div class="project">
-                    <div class="project-content">
-                        <h3>Sorting Algorithm Visualizer</h3>
-                    <p>A dynamic visualization tool for understanding sorting algorithms. Features include:</p>
-                    <ul>
-                        <li>Real-time visualization of various sorting algorithms with step-by-step execution</li>
-                        <li>Customizable parameters for algorithm testing and comparison</li>
-                        <li>Robust testing framework ensuring algorithm accuracy across different data sets</li>
-                    </ul>
-                    <a href="https://github.com/MithunDu404/Projects-pygame/tree/main/Sorting_Algorithm_Visualizer" class="project-link">
-                        <span>View on GitHub</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-item">
-                        <img src="assets/img/python.png" alt="Python">
-                    </div>
-                    <div class="tech-item">
-                        <img src="assets/img/pygame.png" alt="Pygame">
-                    </div>
-                </div>
+            <div class="tech-item">
+              <img src="assets/img/pygame.png" alt="Pygame" />
             </div>
+          </div>
+        </div>
 
-            <div class="project">
-                <div class="project-content">
-                    <h3>Optimal Path Coverage System</h3>
-                <p>A sophisticated campus maintenance routing system. Highlights:</p>
-                <ul>
-                    <li>Custom implementation of Dijkstra's algorithm incorporating multiple optimization factors</li>
-                    <li>Real-time route optimization based on dynamic campus conditions</li>
-                    <li>Robust data management system with backup and restoration capabilities</li>
-                </ul>
-                <a href="https://github.com/MithunDu404/Mini_Project" class="project-link">
-                    <span>View on GitHub</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-                </div>
-                <div class="tech-stack">
-                    <div class="tech-item">
-                        <img src="assets/img/c++.jpeg" alt="C++">
-                    </div>
-                    <div class="tech-item">
-                        <img src="assets/img/oops.png" alt="Pygame">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <section id="skills">
-            <h2>Skills & Education</h2>
-            <a href="skills-education.html" class="section-nav-button">
-                More Details
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+        <div class="project">
+          <div class="project-content">
+            <h3>Sorting Algorithm Visualizer</h3>
+            <p>
+              A dynamic visualization tool for understanding sorting algorithms.
+              Features include:
+            </p>
+            <ul>
+              <li>
+                Real-time visualization of various sorting algorithms with
+                step-by-step execution
+              </li>
+              <li>
+                Customizable parameters for algorithm testing and comparison
+              </li>
+              <li>
+                Robust testing framework ensuring algorithm accuracy across
+                different data sets
+              </li>
+            </ul>
+            <a
+              href="https://github.com/MithunDu404/Projects-pygame/tree/main/Sorting_Algorithm_Visualizer"
+              class="project-link"
+            >
+              <span>View on GitHub</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
             </a>
-            <div class="subsection">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <h4>Indian Institute of Engineering Science And Technology, Shibpur</h4>
-                    <p class="degree">Bachelor of Technology in Computer Science and Technology</p>
-                    <p class="duration">August 2023 - Present | CGPA: 8.67/10.0</p>
-                    <div class="coursework">
-                        <h5>Key Coursework:</h5>
-                        <ul>
-                            <li>Data Structures and Algorithms</li>
-                            <li>Theory of Computation</li>
-                            <li>Digital Logic Design</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="education-item">
-                    <h4>Jateswar High School</h4>
-                    <p class="degree">Higher Secondary Education</p>
-                    <p class="duration">2020 - 2022 | Percentage: 84%</p>
-                    <h4>KhirerKote High School</h4>
-                    <p class="degree">Secondary Education</p>
-                    <p class="duration">Completed 2020 | Percentage: 90.3%</p>
-                </div>
+          </div>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <img src="assets/img/python.png" alt="Python" />
             </div>
+            <div class="tech-item">
+              <img src="assets/img/pygame.png" alt="Pygame" />
+            </div>
+          </div>
+        </div>
 
-            <div class="subsection">
-                <h3>Competitive Examinations</h3>
-                <div class="exam-results">
-                    <div class="exam-item">
-                        <h4>JEE Main 2023</h4>
-                        <p>97.5 percentile</p>
-                        <ul>
-                            <li>All India Rank: Among top 2.5% candidates</li>
-                        </ul>
-                    </div>
-                    <div class="exam-item">
-                        <h4>WBJEE 2023</h4>
-                        <p>Merit Rank: 679</p>
-                        <ul>
-                            <li>State-level engineering entrance examination</li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="project">
+          <div class="project-content">
+            <h3>Optimal Path Coverage System</h3>
+            <p>
+              A sophisticated campus maintenance routing system. Highlights:
+            </p>
+            <ul>
+              <li>
+                Custom implementation of Dijkstra's algorithm incorporating
+                multiple optimization factors
+              </li>
+              <li>
+                Real-time route optimization based on dynamic campus conditions
+              </li>
+              <li>
+                Robust data management system with backup and restoration
+                capabilities
+              </li>
+            </ul>
+            <a
+              href="https://github.com/MithunDu404/Mini_Project"
+              class="project-link"
+            >
+              <span>View on GitHub</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <img src="assets/img/c++.jpeg" alt="C++" />
             </div>
+            <div class="tech-item">
+              <img src="assets/img/oops.png" alt="Pygame" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills">
+        <h2>Skills & Education</h2>
+        <a href="skills-education.html" class="section-nav-button">
+          More Details
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <div class="subsection">
+          <h3>Education</h3>
+          <div class="education-item">
+            <h4>
+              Indian Institute of Engineering Science And Technology, Shibpur
+            </h4>
+            <p class="degree">
+              Bachelor of Technology in Computer Science and Technology
+            </p>
+            <p class="duration">August 2023 - Present | CGPA: 8.67/10.0</p>
+            <div class="coursework">
+              <h5>Key Coursework:</h5>
+              <ul>
+                <li>Data Structures and Algorithms</li>
+                <li>Theory of Computation</li>
+                <li>Digital Logic Design</li>
+              </ul>
+            </div>
+          </div>
 
-            <div class="subsection">
-                <h3>Technical Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <ul>
-                            <li>C (Advanced)</li>
-                            <li>C++ (Advanced)</li>
-                            <li>Python (Advanced)</li>
-                            <li>JavaScript (Intermediate)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Web Technologies</h4>
-                        <ul>
-                            <li>HTML5 & CSS3</li>
-                            <li>Flask Framework</li>
-                            <li>MongoDB</li>
-                            <li>Responsive Design</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Developer Tools</h4>
-                        <ul>
-                            <li>Git & GitHub</li>
-                            <li>VS Code</li>
-                            <li>PyCharm</li>
-                            <li>Render (Deployment)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Core Competencies</h4>
-                        <ul>
-                            <li>Data Structures</li>
-                            <li>Full Stack Development</li>
-                            <li>Competitive Programming</li>
-                            <li>Path Finding Algorithms</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          <div class="education-item">
+            <h4>Jateswar High School</h4>
+            <p class="degree">Higher Secondary Education</p>
+            <p class="duration">2020 - 2022 | Percentage: 84%</p>
+            <h4>KhirerKote High School</h4>
+            <p class="degree">Secondary Education</p>
+            <p class="duration">Completed 2020 | Percentage: 90.3%</p>
+          </div>
+        </div>
 
-            <div class="subsection">
-                <h3>Competitive Programming Achievements</h3>
-                <div class="cp-achievements">
-                    <div class="cp-platform">
-                        <h4>LeetCode</h4>
-                        <ul>
-                            <li>Maximum rating: 1658</li>
-                            <li>Top 16.39% globally</li>
-                            <li>420+ problems solved</li>
-                            <!-- <li>Consistent problem solver badge</li> -->
-                        </ul>
-                    </div>
-                    <div class="cp-platform">
-                        <h4>Codeforces</h4>
-                        <ul>
-                            <li>Maximum rating: 1295</li>
-                            <li>280+ challenges completed</li>
-                            <li>Regular participant in contests</li>
-                        </ul>
-                    </div>
-                    <div class="cp-platform">
-                        <h4>CodeChef</h4>
-                        <ul>
-                            <li>3-star coder</li>
-                            <li> Maximum rating: 1618</li>
-                            <li>Active participation</li>
-                        </ul>
-                    </div>
-                </div>
-                <p><strong>Overall:</strong> 700+ Data Structures and Algorithms problems solved across platforms</p>
+        <div class="subsection">
+          <h3>Competitive Examinations</h3>
+          <div class="exam-results">
+            <div class="exam-item">
+              <h4>JEE Main 2023</h4>
+              <p>97.5 percentile</p>
+              <ul>
+                <li>All India Rank: Among top 2.5% candidates</li>
+              </ul>
             </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p class="contact-intro">Feel free to reach out to me through any of these channels:</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <div>
-                                <strong>Email</strong>
-                                <p>mithundu632@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+91 9382565031</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Howrah, West Bengal, India</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            <div>
-                                <strong>GitHub</strong>
-                                <p>MithunDu404</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            <div>
-                                <strong>LinkedIn</strong>
-                                <p>Mithun Dutta</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Comments <span id="comment-count" style="font-size: 0.9rem; color: var(--accent-primary); font-weight: normal;">(0)</span></h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                            <div class="error" id="name-error"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                            <div class="error" id="email-error"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                            <div class="error" id="message-error"></div>
-                        </div>
-                        <button id = "submit" type="submit">Send Message</button>
-                        <div id="successMessage" class="success-message" style="display:none; color: green; margin-top: 10px;">Message sent successfully!</div>
-                    </form>
-                </div>
+            <div class="exam-item">
+              <h4>WBJEE 2023</h4>
+              <p>Merit Rank: 679</p>
+              <ul>
+                <li>State-level engineering entrance examination</li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Technical Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Programming Languages</h4>
+              <ul>
+                <li>C (Advanced)</li>
+                <li>C++ (Advanced)</li>
+                <li>Python (Advanced)</li>
+                <li>JavaScript (Intermediate)</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Web Technologies</h4>
+              <ul>
+                <li>HTML5 & CSS3</li>
+                <li>Flask Framework</li>
+                <li>MongoDB</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Developer Tools</h4>
+              <ul>
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>PyCharm</li>
+                <li>Render (Deployment)</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Core Competencies</h4>
+              <ul>
+                <li>Data Structures</li>
+                <li>Full Stack Development</li>
+                <li>Competitive Programming</li>
+                <li>Path Finding Algorithms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Competitive Programming Achievements</h3>
+          <div class="cp-achievements">
+            <div class="cp-platform">
+              <h4>LeetCode</h4>
+              <ul>
+                <li>Maximum rating: 1658</li>
+                <li>Top 16.39% globally</li>
+                <li>420+ problems solved</li>
+                <!-- <li>Consistent problem solver badge</li> -->
+              </ul>
+            </div>
+            <div class="cp-platform">
+              <h4>Codeforces</h4>
+              <ul>
+                <li>Maximum rating: 1295</li>
+                <li>280+ challenges completed</li>
+                <li>Regular participant in contests</li>
+              </ul>
+            </div>
+            <div class="cp-platform">
+              <h4>CodeChef</h4>
+              <ul>
+                <li>3-star coder</li>
+                <li>Maximum rating: 1618</li>
+                <li>Active participation</li>
+              </ul>
+            </div>
+          </div>
+          <p>
+            <strong>Overall:</strong> 700+ Data Structures and Algorithms
+            problems solved across platforms
+          </p>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p class="contact-intro">
+              Feel free to reach out to me through any of these channels:
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <div>
+                  <strong>Email</strong>
+                  <p>mithundu632@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <div>
+                  <strong>Phone</strong>
+                  <p>+91 9382565031</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <strong>Location</strong>
+                  <p>Howrah, West Bengal, India</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  ></path>
+                </svg>
+                <div>
+                  <strong>GitHub</strong>
+                  <p>MithunDu404</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <p>Mithun Dutta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>
+              Comments
+              <span
+                id="comment-count"
+                style="
+                  font-size: 0.9rem;
+                  color: var(--accent-primary);
+                  font-weight: normal;
+                "
+                >(0)</span
+              >
+            </h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+                <div class="error" id="name-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <div class="error" id="email-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+                <div class="error" id="message-error"></div>
+              </div>
+              <button id="submit" type="submit">Send Message</button>
+              <div
+                id="successMessage"
+                class="success-message"
+                style="display: none; color: green; margin-top: 10px"
+              >
+                Message sent successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer with copyright -->
     <footer>
-        <p>&copy; 2024 My Portfolio</p>
+      <p>&copy; 2025 My Portfolio</p>
     </footer>
     <!-- Scroll to top button -->
     <button id="scroll-to-top" aria-label="Scroll to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="19" x2="12" y2="5"></line>
-            <polyline points="5 12 12 5 19 12"></polyline>
-        </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
     </button>
     <!-- Link to JavaScript file -->
     <script src="assets/js/main.js"></script>
-</body>
+    <!-- Load Chatbot UI -->
+    <link rel="stylesheet" href="assets/css/chatbot.css" />
+    <script>
+      fetch("chatbot.html")
+        .then((res) => res.text())
+        .then((html) => {
+          const div = document.createElement("div");
+          div.innerHTML = html;
+          document.body.appendChild(div);
+
+          const script = document.createElement("script");
+          script.src = "assets/js/chatbot.js";
+          document.body.appendChild(script);
+        });
+    </script>
+  </body>
 </html>

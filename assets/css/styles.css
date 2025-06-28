@@ -160,7 +160,7 @@ html {
 #theme-toggle .sun-icon,
 #theme-toggle .moon-icon {
     width: 24px;
-    height: 24px;
+    height: 24px; 
 }
 
 /* Show/hide icons based on theme */
